@@ -1,0 +1,41 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "description": "",
+  "productName": "App",
+  "author": "add.your.email@here.com",
+  "private": true,
+  "scripts": {
+    "start": "quasar dev",
+    "post-update": "yarn upgrade",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "1.12.2",
+    "core-js": "3.20.2",
+    "quasar": "2.4.4",
+    "vue-i18n": "^9.2.0-beta.26",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@intlify/vue-i18n-loader": "^4.1.0",
+    "@quasar/app": "^3.1.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.19.1"
+  },
+  "keywords": []
+}
