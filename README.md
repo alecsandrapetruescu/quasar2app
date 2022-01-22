@@ -5,8 +5,8 @@
 
 ![Codesanbox Entry Server Screen](https://cdn.quasar.dev/codesandbox/codesandbox-entry.jpg)
 
-## Purpose
-
+## Motivation
+[7 Reasons to migrate from Vuetify to Quasar Framework](https://medium.com/@charliegilmanuk/7-reasons-to-migrate-from-vuetify-to-quasar-framework-8ea47358262)
 
 ## Usage
 ```
