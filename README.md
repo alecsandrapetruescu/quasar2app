@@ -9,7 +9,17 @@
 
 
 ## Usage
+```
+// In package.json
 
+"scripts": {
+    "start": "quasar dev",
+
+
+// In cli
+> npm install
+> npm run start
+```
 
 ## Quasar Repositories
 
