@@ -88,7 +88,7 @@ const linksList = [
 ];
 
 export default defineComponent({
-  name: "MainLayout",
+  name: "DashboardLayout",
 
   components: {
     EssentialLink,
