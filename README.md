@@ -7,23 +7,34 @@
 
 ## Motivation
 [7 Reasons to migrate from Vuetify to Quasar Framework](https://medium.com/@charliegilmanuk/7-reasons-to-migrate-from-vuetify-to-quasar-framework-8ea47358262)
+[Composition API](https://v3.vuejs.org/api/composition-api.html)
+
+## Inspiration
+- [appsmith](https://www.appsmith.com/)
+- [Vue CRUD](https://github.com/what-crud/vue-crud)
 
 ## Usage
+## Install the dependencies
+```bash
+npm install
 ```
-// In package.json
-
-"scripts": {
-    "start": "quasar dev",
-
-
-// In cli
-> npm install
-> npm run start
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
+### Lint the files
+```bash
+npm run lint
 ```
 
 ## Quasar Repositories
 
 - [Quasar Framework](https://github.com/quasarframework/quasar)
+
+
+## Resources
+- [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
+- [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
 ## License
 
