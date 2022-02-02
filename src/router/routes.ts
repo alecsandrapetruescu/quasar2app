@@ -8,22 +8,22 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/',
-    component: () => import('layouts/MLayout.vue'),
+    component: () => import('layouts/DefaultLayout.vue'),
     children: [{ path: '', component: () => import('pages/Index.vue') }]
   },
   {
     path: '/about',
-    component: () => import('layouts/MLayout.vue'),
+    component: () => import('layouts/DefaultLayout.vue'),
     children: [{ path: '', component: () => import('pages/About.vue') }]
   },
   {
     path: '/question',
-    component: () => import('layouts/MLayout.vue'),
+    component: () => import('layouts/DefaultLayout.vue'),
     children: [{ path: '', component: () => import('pages/Question.vue') }]
   },
   {
     path: '/contact',
-    component: () => import('layouts/MLayout.vue'),
+    component: () => import('layouts/DefaultLayout.vue'),
     children: [{ path: '', component: () => import('pages/Contact.vue') }]
   },
   // Always leave this as last one,
