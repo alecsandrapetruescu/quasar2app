@@ -1,7 +1,8 @@
 <template>
   <q-page class="flex flex-center">
     <div class="fit row wrap justify-center items-start content-start">
-      <q-card flat bordered class="col-9">
+    <div class="col-10">
+      <q-card flat bordered >
         <q-item>
           <q-item-section avatar>
             <q-skeleton type="QAvatar" animation="fade" />
@@ -20,13 +21,14 @@
         <q-skeleton height="200px" square animation="fade" />
       </q-card>
     </div>
+    </div>
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "AboutPage",
-});
+  name: 'AboutPage'
+})
 </script>
