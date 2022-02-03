@@ -96,9 +96,7 @@ export default defineComponent({
     // const wForm = computed(() => toRef(props, 'form'));
     const wForm = computed(() => props.form)
     console.log(wForm)
-    const component = 'q-input'
     return {
-      component,
       wForm,
       name,
       email,
