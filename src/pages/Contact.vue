@@ -24,7 +24,7 @@ export default defineComponent({
   setup () {
     const formComponent = 'q-w-form'
     const formModel = ref<Form>({
-      standalone: true,
+      standalone: JSON.parse(process.env.STANDALONE ? process.env.STANDALONE : 'true'),
       title: 'Contact',
       inputs: [
         {
