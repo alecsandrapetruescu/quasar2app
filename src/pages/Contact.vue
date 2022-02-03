@@ -22,10 +22,15 @@ export default defineComponent({
   components: { QWForm: defineAsyncComponent(() => import('../components/QWForm.vue')) },
   setup () {
     const formComponent = 'q-w-form'
+    const isStandalone = JSON.parse(process.env.STANDALONE ? process.env.STANDALONE : 'true')
+    const hasEmail = true
+    const emailTo = isStandalone ? process.env.EMAIL_TO : undefined
     const formModel = ref<Form>({
-      standalone: JSON.parse(process.env.STANDALONE ? process.env.STANDALONE : 'true'),
+      isStandalone: isStandalone,
       id: 'contact',
       title: 'Contact',
+      hasEmail: hasEmail,
+      emailTo: emailTo,
       inputs: [
         {
           id: 1,

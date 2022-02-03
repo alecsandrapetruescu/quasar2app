@@ -17,15 +17,18 @@ export interface PageMeta {
 export interface Input {
   id: number;
   component: string;
-  content: string | number | boolean | any;
+  content: string | number | boolean;
   type: string;
   label: string;
   hint: string;
 }
 
 export interface Form {
-  readonly standalone: boolean;
+  readonly isStandalone: boolean;
   id: string;
   title: string;
-  inputs: Input[]
+  inputs: Input[];
+  hasEmail?: boolean;
+  emailTo?: string;
+  hasReCaptcha?: boolean;
 }
