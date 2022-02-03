@@ -6,7 +6,7 @@
 
       </div>
       <div class="col-6 col-md-4">
-        <!-- <q-w-form isSimple :form="form"></q-w-form> -->
+        <!-- <q-w-form isSimple :form="formModel"></q-w-form> -->
         <component v-bind:is="formComponent" :form="formModel"/>
       </div>
     </div>
@@ -14,13 +14,12 @@
 </template>
 
 <script lang="ts">
-import QWForm from 'components/QWForm.vue'
-import { defineComponent, ref } from 'vue'
+import { defineAsyncComponent, defineComponent, ref } from 'vue'
 import { Form } from 'components/models'
 
 export default defineComponent({
   name: 'ContactPage',
-  components: { QWForm },
+  components: { QWForm: defineAsyncComponent(() => import('../components/QWForm.vue')) },
   setup () {
     const formComponent = 'q-w-form'
     const formModel = ref<Form>({
