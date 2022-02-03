@@ -15,8 +15,8 @@ export interface PageMeta {
 }
 
 export interface Input {
-  // model: any;
   id: number;
+  component: string;
   content: string | number | boolean | any;
   type: string;
   label: string;
@@ -25,6 +25,7 @@ export interface Input {
 
 export interface Form {
   readonly standalone: boolean;
+  id: string;
   title: string;
   inputs: Input[]
 }

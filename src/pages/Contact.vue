@@ -25,11 +25,13 @@ export default defineComponent({
     const formComponent = 'q-w-form'
     const formModel = ref<Form>({
       standalone: JSON.parse(process.env.STANDALONE ? process.env.STANDALONE : 'true'),
+      id: 'contact',
       title: 'Contact',
       inputs: [
         {
           id: 1,
           content: '',
+          component: 'q-input',
           type: 'text',
           label: 'Your name *',
           hint: 'Name and surname'
@@ -37,6 +39,7 @@ export default defineComponent({
         {
           id: 2,
           content: '',
+          component: 'q-input',
           type: 'email',
           label: 'Your email *',
           hint: 'name@email.com'
@@ -44,6 +47,7 @@ export default defineComponent({
         {
           id: 3,
           content: '',
+          component: 'q-input',
           type: 'textarea',
           label: 'Your message *',
           hint: ''

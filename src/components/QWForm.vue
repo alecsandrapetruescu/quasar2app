@@ -6,11 +6,11 @@
   <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
     <div v-for="input in wForm.inputs" :key="input.id">
       {{ input.id }} - dynamic component
-      <component v-bind:is="component" filled lazy-rules
-            v-model="input.content"
-            :type="input.type"
-            :label="input.label"
-            :hint="input.hint" />
+      <component v-bind:is="input.component" filled lazy-rules
+                 v-model="input.content"
+                 :type="input.type"
+                 :label="input.label"
+                 :hint="input.hint"/>
       {{ input.id }} - explicit
       <q-input
             filled
@@ -54,7 +54,7 @@
   </q-form>
 </template>
 <script lang="ts">
-import { defineComponent, ref, computed, PropType, toRef } from 'vue'
+import { computed, defineComponent, PropType, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { Form } from 'components/models'
 
