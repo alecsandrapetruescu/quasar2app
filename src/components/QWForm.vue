@@ -17,32 +17,6 @@
             lazy-rules
           />
     </div>
-<!-- :rules="[validationRules[input.rules]]"
-          <q-input
-            filled
-            v-model="name"
-            label="Your name *"
-            hint="Name and surname"
-            lazy-rules
-            :rules="[validationRules.empty]"
-          />
-
-          <q-input
-            filled
-            v-model="email"
-            label="Your email *"
-            hint="name@email.com"
-            type="email"
-            lazy-rules
-            :rules="[validationRules.email]"
-          />
-          <q-input
-            v-model="text"
-            label="Your message *"
-            filled
-            type="textarea"
-          />
--->
   <div>
     <q-btn label="Submit" type="submit" color="primary" />
     <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm"/>
@@ -50,7 +24,7 @@
   </q-form>
 </template>
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from 'vue'
+import { computed, defineComponent, PropType } from 'vue'
 import { useQuasar } from 'quasar'
 import { Form } from 'components/models'
 
@@ -64,11 +38,6 @@ export default defineComponent({
   },
   setup (props) {
     const $q = useQuasar()
-    // const locale = $q.lang.getLocale()
-    const name = ref(null)
-    const email = ref(null)
-    const text = ref(null)
-
     const validationRules = {
       empty: (content: string) => (content && content.length > 0) || 'Please type something',
       number: (content: number) =>
@@ -87,9 +56,6 @@ export default defineComponent({
     }
     return {
       formModel,
-      name,
-      email,
-      text,
       validationRules,
       emailTo,
 
@@ -104,11 +70,9 @@ export default defineComponent({
       },
 
       onReset () {
-        console.log(formModel)
-        formModel.value.inputs[0].content = undefined
-        // wForm._value.inputs[0].content = null
-        name.value = null
-        email.value = null
+        formModel.value.inputs.forEach((input) => {
+          input.content = undefined
+        })
       }
     }
   }

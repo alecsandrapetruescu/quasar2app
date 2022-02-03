@@ -17,7 +17,7 @@ export interface PageMeta {
 export interface Input {
   id: number;
   component: string;
-  content: string | number | boolean;
+  content: string | number | boolean | undefined;
   type: string;
   label: string;
   hint: string;
