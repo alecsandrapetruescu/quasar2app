@@ -6,6 +6,7 @@
   "author": "",
   "private": true,
   "scripts": {
+    "build": "quasar build",
     "dev": "npm run lint && quasar dev",
     "lint": "eslint --ext .js,.ts,.vue --fix ./",
     "test": "echo \"No test specified\" && exit 0"

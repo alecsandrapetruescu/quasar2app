@@ -18,21 +18,31 @@
 ```bash
 npm install
 ```
+
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
+
 ```bash
 quasar dev
 ```
+
 ### Lint the files
+
 ```bash
 npm run lint
+```
+
+### Build the app for production
+
+```bash
+quasar build
 ```
 
 ## Quasar Repositories
 
 - [Quasar Framework](https://github.com/quasarframework/quasar)
 
-
 ## Resources
+
 - [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
