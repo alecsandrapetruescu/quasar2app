@@ -31,17 +31,17 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: "DefaultLayout",
+  name: 'DefaultLayout',
 
   components: {},
 
-  setup() {
+  setup () {
     return {
-      tab: ref("home"),
-    };
-  },
-});
+      tab: ref('home')
+    }
+  }
+})
 </script>
