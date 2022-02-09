@@ -5,6 +5,9 @@
 
 ![Codesanbox Entry Server Screen](https://cdn.quasar.dev/codesandbox/codesandbox-entry.jpg)
 
+## Purpose
+Learn Quasar Framework build with Vue3.
+
 ## Motivation
 [7 Reasons to migrate from Vuetify to Quasar Framework](https://medium.com/@charliegilmanuk/7-reasons-to-migrate-from-vuetify-to-quasar-framework-8ea47358262)
 [Composition API](https://v3.vuejs.org/api/composition-api.html)
@@ -37,6 +40,7 @@ npm run lint
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
 ## [Code of conduct](https://javascript-conference.com/code-of-conduct/)
+
 ## License
 
 Copyright (c) 2022
