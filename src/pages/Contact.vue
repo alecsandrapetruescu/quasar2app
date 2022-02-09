@@ -36,6 +36,7 @@ export default defineComponent({
           id: 1,
           content: '',
           component: 'q-input',
+          isDynamic: true,
           type: 'text',
           label: 'Your name *',
           hint: 'Name and surname'
@@ -44,6 +45,7 @@ export default defineComponent({
           id: 2,
           content: '',
           component: 'q-input',
+          isDynamic: true,
           type: 'email',
           label: 'Your email *',
           hint: 'name@email.com'
@@ -52,6 +54,7 @@ export default defineComponent({
           id: 3,
           content: '',
           component: 'q-input',
+          isDynamic: true,
           type: 'textarea',
           label: 'Your message *',
           hint: ''

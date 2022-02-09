@@ -1,26 +1,24 @@
 <template>
-  <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+  <q-form class="q-gutter-md" @reset="onReset" @submit="onSubmit">
     <div v-for="input in formModel.inputs" :key="input.id">
-      {{ input.id }} - dynamic component
-      <component v-bind:is="input.component" filled lazy-rules
-                 v-model="input.content"
-                 :type="input.type"
+      <component v-bind:is="input.component" v-show="input.isDynamic" v-model="input.content" :hint="input.hint"
                  :label="input.label"
-                 :hint="input.hint"/>
-      {{ input.id }} - explicit
-      <q-input
-          filled
-          v-model="input.content"
-            :type="input.type"
-            :label="input.label"
-            :hint="input.hint"
-            lazy-rules
-          />
+                 :type="input.type"
+                 filled
+                 lazy-rules/>
+      <q-input v-show="!input.isDynamic"
+               v-model="input.content"
+               :hint="input.hint"
+               :label="input.label"
+               :type="input.type"
+               filled
+               lazy-rules
+      />
     </div>
-  <div>
-    <q-btn label="Submit" type="submit" color="primary" />
-    <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm"/>
-  </div>
+    <div>
+      <q-btn color="primary" label="Submit" type="submit"/>
+      <q-btn class="q-ml-sm" color="primary" flat label="Reset" type="reset"/>
+    </div>
   </q-form>
 </template>
 <script lang="ts">
