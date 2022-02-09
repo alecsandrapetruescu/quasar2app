@@ -11,6 +11,7 @@
                  lazy-rules
       />
       <q-input v-show="!input.isDynamic && input.component === inputComponents.Input"
+               v-model="input.content"
                :hint="input.hint"
                :label="input.label"
                :type="input.type"
@@ -46,10 +47,7 @@ export default defineComponent({
       empty: (content: string) => (content && content.length > 2) || 'Please type something',
       number: (content: number) => (content !== null && content > 0 && content < 100) ||
           'Please type a real number',
-      email: (content: string) =>
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-              content
-          ) || `Please type a valid email! Email ${content}`
+      email: (content: string) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(content) || `Please type a valid email! Email ${content}`
     }
 
     const formModel = computed(() => props.form)
