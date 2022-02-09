@@ -58,6 +58,15 @@ export default defineComponent({
           type: 'textarea',
           label: 'Your message *',
           hint: ''
+        },
+        {
+          id: 4,
+          content: false,
+          component: 'q-checkbox',
+          isDynamic: true,
+          type: 'checkbox',
+          label: 'I accept the license and terms.',
+          hint: ''
         }
       ]
     })
