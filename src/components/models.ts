@@ -33,3 +33,8 @@ export interface Form {
   emailTo?: string;
   hasReCaptcha?: boolean;
 }
+
+export enum InputComponents {
+  Input = 'q-input',
+  Checkbox = 'q-checkbox'
+}
