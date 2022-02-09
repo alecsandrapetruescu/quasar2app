@@ -36,6 +36,7 @@ npm run lint
 - [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
+## [Code of conduct](https://javascript-conference.com/code-of-conduct/)
 ## License
 
 Copyright (c) 2022
