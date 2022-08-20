@@ -26,11 +26,11 @@ export default defineComponent({
     const hasEmail = true
     const emailTo = isStandalone ? process.env.EMAIL_TO : undefined
     const formModel = ref<Form>({
-      isStandalone: isStandalone,
+      isStandalone,
       id: 'contact',
       title: 'Contact',
-      hasEmail: hasEmail,
-      emailTo: emailTo,
+      hasEmail,
+      emailTo,
       inputs: [
         {
           id: 1,
