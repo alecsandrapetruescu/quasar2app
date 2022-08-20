@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "quasar build",
-    "dev": "quasar dev",
+    "dev": "quasar dev --mode spa",
     "lint": "eslint --ext .js,.ts,.vue --fix ./",
     "test": "echo \"No test specified\" && exit 0"
   },
@@ -15,7 +15,6 @@
     "@quasar/extras": "^1.15.1",
     "axios": "^0.27.2",
     "core-js": "^3.24.1",
-    "dotenv": "^16.0.1",
     "quasar": "^2.7.7",
     "vue": "^3.2.37",
     "vue-i18n": "^9.2.2",
@@ -29,6 +28,7 @@
     "@types/node": "^18.7.8",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
+    "dotenv": "^16.0.1",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-with-typescript": "^22.0.0",
