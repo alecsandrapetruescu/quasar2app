@@ -1,5 +1,5 @@
 ![image](https://user-images.githubusercontent.com/3314957/140314572-9c26fc82-76b4-44b7-9f16-795da179195c.png)
-# Quasar App 
+# Quasar App
 
 > Initially started with Quasar on Codesandbox.io.
 
@@ -37,7 +37,7 @@ npm run lint
 ### Build the app for production
 
 ```bash
-quasar build
+npm run build
 ```
 
 ## Quasar Repositories
