@@ -20,7 +20,9 @@ Learn Quasar Framework build with Vue3.
 
 ### Usage
 ### Requirements
-Node.js version 16.x
+[Node.js version 16.x](https://nodejs.org/en/about/releases/#releases)
+
+[Install Node.js version 16.x on Ubuntu 20.x](https://gist.github.com/alecsandrapetruescu/9e5d1b02f2a9644b14257c101c8dd332)
 ### Install the dependencies
 ```bash
 npm install --omit=optional
