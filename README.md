@@ -19,9 +19,11 @@ Learn Quasar Framework build with Vue3.
 - [Vue CRUD](https://github.com/what-crud/vue-crud)
 
 ### Usage
+### Requirements
+Node.js version 16.x
 ### Install the dependencies
 ```bash
-npm install
+npm install --omit=optional
 ```
 
 #### Start the app in development mode (hot-code reloading, error reporting, etc.)
