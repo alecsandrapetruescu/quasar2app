@@ -1,6 +1,8 @@
 ![image](https://user-images.githubusercontent.com/3314957/140314572-9c26fc82-76b4-44b7-9f16-795da179195c.png)
 # Quasar App
-
+[![build (16.x)](https://github.com/alecsandrapetruescu/QApp/actions/workflows/build.yml/badge.svg)](https://github.com/alecsandrapetruescu/QApp/actions/workflows/build.yml)
+[![CodeQL](https://github.com/alecsandrapetruescu/QApp/actions/workflows/codeql.yml/badge.svg)](https://github.com/alecsandrapetruescu/QApp/actions/workflows/codeql.yml)
+[![license](https://img.shields.io/github/license/alecsandrapetruescu/vue3app)](https://github.com/alecsandrapetruescu/vue3app/blob/main/LICENSE)
 > Initially started with Quasar on Codesandbox.io.
 
 ![Codesanbox Entry Server Screen](https://cdn.quasar.dev/codesandbox/codesandbox-entry.jpg)
