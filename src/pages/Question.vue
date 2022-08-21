@@ -28,10 +28,24 @@
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script lang="ts">
+import { PageMeta } from '../components/models'
+import { defineComponent, ref } from 'vue'
+import metaData from '../components/MetaBuilder'
+import { useMeta } from 'quasar'
 
 export default defineComponent({
-  name: 'QuestionPage'
+  name: 'QuestionPage',
+  components: { },
+  setup () {
+    const pageMeta = ref<PageMeta>({
+      isHomePage: false,
+      domain: 'DOMAIN',
+      title: 'Questions',
+      description: 'My custom description'
+    })
+    useMeta(metaData.build(pageMeta))
+    return { }
+  }
 })
 </script>
