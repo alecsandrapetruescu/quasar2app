@@ -17,7 +17,7 @@
           </q-item-section>
         </q-item>
 
-        <q-skeleton height="200px" square animation="fade" />
+        <q-skeleton height="600px" square animation="fade" />
 
         <q-card-actions align="right" class="q-gutter-md">
           <q-skeleton type="QBtn" />
