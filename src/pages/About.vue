@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { PageMeta } from 'components/models'
+import { PageMeta } from '../components/models'
 import { defineComponent, ref } from 'vue'
 import metaData from '../components/MetaBuilder'
 import { useMeta } from 'quasar'
