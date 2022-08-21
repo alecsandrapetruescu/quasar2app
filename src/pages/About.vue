@@ -1,8 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div class="fit row wrap justify-center items-start content-start">
-      <div class="col-10">
-        <q-card flat bordered>
+        <q-card flat bordered class="col-10">
           <q-item>
             <q-item-section avatar>
               <q-skeleton bordered type="QAvatar" animation="fade" class="bg-blue-1"/>
@@ -23,7 +22,6 @@
 
           <q-skeleton bordered height="600px" square animation="fade"/>
         </q-card>
-      </div>
     </div>
   </q-page>
 </template>

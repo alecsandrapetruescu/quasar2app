@@ -17,8 +17,8 @@
               <q-route-tab name="about" label="About" to="/about" />
               <q-route-tab name="question" label="Question" to="/question" />
               <q-route-tab name="contact" label="Contact" to="/contact" />
-              <q-separator dark vertical inset />
-              <q-route-tab name="admin" label="Sign in" to="/admin" />
+              <q-separator v-if="!isStandalone" dark vertical inset />
+              <q-route-tab v-if="!isStandalone" name="admin" label="Sign in" to="/admin" />
             </q-tabs>
           </q-toolbar-title>
         </q-toolbar>
@@ -33,6 +33,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+import { applicationInfo } from 'boot/applicationInfo'
 
 export default defineComponent({
   name: 'DefaultLayout',
@@ -41,7 +42,8 @@ export default defineComponent({
 
   setup () {
     return {
-      tab: ref('home')
+      tab: ref('home'),
+      isStandalone: applicationInfo.isStandalone
     }
   }
 })

@@ -1,28 +1,26 @@
 <template>
   <q-page class="flex flex-center">
     <div class="fit row wrap justify-center items-start content-start">
-      <q-card flat bordered class="col-9">
+      <q-card flat bordered class="col-10">
         <q-item>
           <q-item-section avatar>
-            <q-skeleton type="QAvatar" animation="fade" />
+            <q-skeleton bordered type="QAvatar" animation="fade" class="bg-blue-1"/>
           </q-item-section>
 
           <q-item-section>
             <q-item-label>
-              <q-skeleton type="text" animation="fade" />
+              <q-skeleton bordered type="text" animation="fade"/>
             </q-item-label>
             <q-item-label caption>
-              <q-skeleton type="text" animation="fade" />
+              <q-skeleton bordered type="text" animation="fade"/>
+            </q-item-label>
+            <q-item-label caption>
+              <q-skeleton bordered type="text" animation="fade"/>
             </q-item-label>
           </q-item-section>
         </q-item>
 
-        <q-skeleton height="600px" square animation="fade" />
-
-        <q-card-actions align="right" class="q-gutter-md">
-          <q-skeleton type="QBtn" />
-          <q-skeleton type="QBtn" />
-        </q-card-actions>
+        <q-skeleton bordered height="600px" square animation="fade"/>
       </q-card>
     </div>
   </q-page>

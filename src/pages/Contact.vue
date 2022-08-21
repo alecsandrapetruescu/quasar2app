@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex flex-center">
     <div class="fit row wrap justify-center items-start content-start">
-      <div class="col-6 col-md-6 q-pa-md">
-        <q-card flat>
+
+        <q-card flat class="col-6 col-md-6 q-pa-md">
           <q-item>
             <q-item-section avatar>
               <q-skeleton type="QAvatar" />
@@ -50,9 +50,7 @@
           <q-skeleton bordered height="400px" square animation="fade" class="q-my-md"/>
         </q-card>
 
-      </div>
-      <div class="col-6 col-md-4">
-        <q-card flat>
+        <q-card flat class="col-6 col-md-4">
           <q-item>
             <q-item-section>
               <h5>{{ $t("contactForm") }}</h5>
@@ -66,7 +64,7 @@
           </q-item>
         </q-card>
       </div>
-    </div>
+
   </q-page>
 </template>
 
@@ -81,6 +79,7 @@ export default defineComponent({
   name: 'ContactPage',
   components: { QWForm: defineAsyncComponent(() => import('../components/QWForm.vue')) },
   setup () {
+    console.log(applicationInfo)
     const formComponent = 'q-w-form'
     const isStandalone = applicationInfo.isStandalone
     const hasEmail = true
