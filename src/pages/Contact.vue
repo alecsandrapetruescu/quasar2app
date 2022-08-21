@@ -75,15 +75,16 @@ import { defineAsyncComponent, defineComponent, ref } from 'vue'
 import { Form, PageMeta } from 'components/models'
 import { useMeta } from 'quasar'
 import metaData from 'components/MetaBuilder'
+import { applicationInfo } from 'boot/applicationInfo'
 
 export default defineComponent({
   name: 'ContactPage',
   components: { QWForm: defineAsyncComponent(() => import('../components/QWForm.vue')) },
   setup () {
     const formComponent = 'q-w-form'
-    const isStandalone = JSON.parse(process.env.STANDALONE ? process.env.STANDALONE : 'true')
+    const isStandalone = applicationInfo.isStandalone
     const hasEmail = true
-    const emailTo = isStandalone ? process.env.EMAIL_TO : undefined
+    const emailTo = applicationInfo.emailTo
     const formModel = ref<Form>({
       isStandalone,
       id: 'contact',

@@ -50,16 +50,17 @@ export default defineComponent({
       email: (content: string) => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(content) || `Please type a valid email! Email ${content}`
     }
 
-    const formModel = computed(() => props.form)
-    let emailTo = ''
-    if (formModel.value.isStandalone && formModel.value.emailTo) {
-      emailTo = formModel.value.emailTo
+    function resetForm () {
+      formModel.value.inputs.forEach((input) => {
+        input.content = undefined
+      })
     }
+
+    const formModel = computed(() => props.form)
     return {
       inputComponents,
       formModel,
       validationRules,
-      emailTo,
       onSubmit (evt: Event | SubmitEvent) {
         console.log('onSubmit')
         const anyEmptyInputs = formModel.value.inputs.find((input) => input.content === '')
@@ -80,20 +81,25 @@ export default defineComponent({
               message: 'You need to accept the license and terms first'
             })
           } else {
+            let message = 'Submitted to '
+            if (formModel.value.isStandalone && formModel.value.emailTo) {
+              const emailTo = formModel.value.emailTo
+              message = `${message} ${emailTo}`
+              // TODO send mail
+            }
+            resetForm()
             $q.notify({
               color: 'green-4',
               textColor: 'white',
-              icon: 'cloud_done',
-              message: `Submitted to ${emailTo}`
+              icon: 'email',
+              message
             })
           }
         }
       },
       onReset () {
         console.log('onReset')
-        formModel.value.inputs.forEach((input) => {
-          input.content = undefined
-        })
+        resetForm()
       }
     }
   }

@@ -30,6 +30,7 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
+      'applicationInfo',
       'i18n',
       'axios'
     ],
