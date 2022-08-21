@@ -1,5 +1,5 @@
 <template>
-  <q-form class="q-gutter-md" @reset="onReset" @submit="onSubmit">
+  <q-form ref="qform" class="q-gutter-md" @reset="onReset" @submit="onSubmit">
     <div v-for="input in formModel.inputs" :key="input.id">
       <component v-bind:is="input.component"
                  v-show="input.isDynamic"
@@ -22,8 +22,8 @@
                   v-model="input.content"></q-checkbox>
     </div>
     <div>
-      <q-btn color="primary" label="Submit" type="submit"/>
-      <q-btn class="q-ml-sm" color="primary" flat label="Reset" type="reset"/>
+      <q-btn label="Submit" type="submit" color="primary"/>
+      <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm"/>
     </div>
   </q-form>
 </template>
@@ -60,28 +60,37 @@ export default defineComponent({
       formModel,
       validationRules,
       emailTo,
-
-      onSubmit () {
-        console.log(formModel)
-        const terms = formModel.value.inputs.find((input) => input.type === 'checkbox')
-        if (terms && terms.content !== true) {
+      onSubmit (evt: Event | SubmitEvent) {
+        console.log('onSubmit')
+        const anyEmptyInputs = formModel.value.inputs.find((input) => input.content === '')
+        if (anyEmptyInputs) {
           $q.notify({
             color: 'red-5',
             textColor: 'white',
             icon: 'warning',
-            message: 'You need to accept the license and terms first'
+            message: `You need to fill in '${anyEmptyInputs.label}'. Hint: ${anyEmptyInputs.hint}`
           })
         } else {
-          $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: `Submitted to ${emailTo}`
-          })
+          const terms = formModel.value.inputs.find((input) => input.type === 'checkbox')
+          if (terms && terms.content !== true) {
+            $q.notify({
+              color: 'red-5',
+              textColor: 'white',
+              icon: 'warning',
+              message: 'You need to accept the license and terms first'
+            })
+          } else {
+            $q.notify({
+              color: 'green-4',
+              textColor: 'white',
+              icon: 'cloud_done',
+              message: `Submitted to ${emailTo}`
+            })
+          }
         }
       },
-
       onReset () {
+        console.log('onReset')
         formModel.value.inputs.forEach((input) => {
           input.content = undefined
         })
