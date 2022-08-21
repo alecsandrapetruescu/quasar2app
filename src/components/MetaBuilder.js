@@ -1,6 +1,6 @@
 const metaData = {
   build: (pageMetaData) => {
-    console.log(pageMetaData)
+    // console.log(pageMetaData)
     return {
       // sets document title
       title: pageMetaData._rawValue.title,
