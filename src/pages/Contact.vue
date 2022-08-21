@@ -1,13 +1,70 @@
 <template>
   <q-page class="flex flex-center">
     <div class="fit row wrap justify-center items-start content-start">
-      <div class="col-6 col-md-6">
-        <h5 class="q-pa-md">{{ $t("page") }}</h5>
+      <div class="col-6 col-md-6 q-pa-md">
+        <q-card flat>
+          <q-item>
+            <q-item-section avatar>
+              <q-skeleton type="QAvatar" />
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>
+                <q-skeleton type="text" />
+              </q-item-label>
+              <q-item-label caption>
+                <q-skeleton type="text" width="65%" />
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item>
+            <q-item-section avatar>
+              <q-skeleton type="QAvatar" />
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>
+                <q-skeleton type="text" />
+              </q-item-label>
+              <q-item-label caption>
+                <q-skeleton type="text" width="90%" />
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+
+          <q-item>
+            <q-item-section avatar>
+              <q-skeleton type="QAvatar" />
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>
+                <q-skeleton type="text" width="35%" />
+              </q-item-label>
+              <q-item-label caption>
+                <q-skeleton type="text" />
+              </q-item-label>
+            </q-item-section>
+          </q-item>
+          <q-skeleton bordered height="400px" square animation="fade" class="q-my-md"/>
+        </q-card>
 
       </div>
       <div class="col-6 col-md-4">
-        <!-- <q-w-form isSimple :form="formModel"></q-w-form> -->
-        <component v-bind:is="formComponent" :form="formModel"/>
+        <q-card flat>
+          <q-item>
+            <q-item-section>
+              <h5>{{ $t("contactForm") }}</h5>
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section>
+              <!-- <q-w-form isSimple :form="formModel"></q-w-form> -->
+              <component v-bind:is="formComponent" :form="formModel"/>
+            </q-item-section>
+          </q-item>
+        </q-card>
       </div>
     </div>
   </q-page>
