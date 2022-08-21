@@ -72,7 +72,9 @@
 
 <script lang="ts">
 import { defineAsyncComponent, defineComponent, ref } from 'vue'
-import { Form } from 'components/models'
+import { Form, PageMeta } from 'components/models'
+import { useMeta } from 'quasar'
+import metaData from 'components/MetaBuilder'
 
 export default defineComponent({
   name: 'ContactPage',
@@ -127,6 +129,14 @@ export default defineComponent({
         }
       ]
     })
+
+    const pageMeta = ref<PageMeta>({
+      isHomePage: false,
+      domain: 'DOMAIN',
+      title: 'Contact',
+      description: 'My custom description'
+    })
+    useMeta(metaData.build(pageMeta))
     return { formComponent, formModel }
   }
 })
