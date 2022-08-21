@@ -29,9 +29,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { PageMeta } from 'components/models'
+import { defineComponent, ref } from 'vue'
+import metaData from '../components/MetaBuilder'
+import { useMeta } from 'quasar'
 
 export default defineComponent({
-  name: 'AboutPage'
+  name: 'AboutPage',
+  components: { },
+  setup () {
+    const pageMeta = ref<PageMeta>({
+      isHomePage: false,
+      domain: 'DOMAIN',
+      title: 'About',
+      description: 'My custom description'
+    })
+    useMeta(metaData.build(pageMeta))
+    return { }
+  }
 })
 </script>
