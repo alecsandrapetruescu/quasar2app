@@ -45,6 +45,9 @@ npm run lint
 ```bash
 npm run build
 ```
+### Serverless
+[Serverless single page application](https://github.com/serverless/examples/tree/v3/aws-node-single-page-app-via-cloudfront)
+[Serverless offline](https://www.serverless.com/plugins/serverless-offline)
 
 ### Quasar Repositories
 
