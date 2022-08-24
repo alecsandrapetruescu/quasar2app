@@ -121,7 +121,7 @@ export default defineComponent({
         {
           id: 4,
           content: false,
-          component: 'q-checkbox',
+          component: 'q-checkbox-link',
           isDynamic: true,
           type: 'checkbox',
           label: 'I accept the license and terms.',

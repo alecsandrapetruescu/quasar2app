@@ -28,12 +28,13 @@
   </q-form>
 </template>
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
+import { computed, defineAsyncComponent, defineComponent, PropType } from 'vue'
 import { useQuasar } from 'quasar'
 import { Form, InputComponents } from 'components/models'
 
 export default defineComponent({
   name: 'QWForm',
+  components: { QCheckboxLink: defineAsyncComponent(() => import('../components/QCheckboxLink.vue')) },
   props: {
     form: {
       type: Object as PropType<Form>,
