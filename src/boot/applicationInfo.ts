@@ -3,7 +3,8 @@ import { boot } from 'quasar/wrappers'
 const applicationInfo = {
   isStandalone: !!process.env.STANDALONE,
   emailTo: process.env.STANDALONE ? process.env.EMAIL_TO : undefined,
-  apiURL: process.env.STANDALONE ? undefined : process.env.API_URL
+  apiURL: process.env.STANDALONE ? undefined : process.env.API_URL,
+  mode: process.env.NODE_ENV
 }
 
 export default boot(({ app }) => {
