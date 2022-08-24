@@ -99,6 +99,7 @@ class ServerlessPlugin {
 
     if (output && output.OutputValue) {
       this.serverless.cli.log(`Web App Domain: ${output.OutputValue}`)
+      // TODO Store in ssm
       return output.OutputValue
     }
 
