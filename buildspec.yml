@@ -1,0 +1,31 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: eu-central-1
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16.x
+    commands:
+      - echo Install started on `date`
+      - npm install -g serverless
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+#      - npm ci
+      - npm build
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Deploy started on `date`
+      - serverless plugin install -n serverless-single-page-app-plugin
+      - serverless deploy --region $AWS_REGION --verbose
+      - serverless domainInfo
+      - serverless syncToS3
+      - serverless invalidateCloudFrontCache
+cache:
+  paths:
+    - node_modules
