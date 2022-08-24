@@ -55,18 +55,20 @@ npm run build
 - [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
-#### Serverless
+#### Serverless Framework
 [Serverless single page application](https://github.com/serverless/examples/tree/v3/aws-node-single-page-app-via-cloudfront)
 [serverless-single-page-app-plugin](https://github.com/jonathanconway/serverless-single-page-app-plugin)
 [Serverless offline](https://www.serverless.com/plugins/serverless-offline)
 [Serverless S3 local](https://www.serverless.com/plugins/serverless-frontend-plugin)
 [Package and deploy any frontend with your serverless backend.](https://www.serverless.com/plugins/serverless-s3-local)
-
+[AWS CI/CD Pipeline to Deploy a Serverless Framework Project](https://www.serverlessguru.com/blog/aws-ci-cd-pipeline-to-deploy-a-serverless-framework-project)
+[Full Stack Serverless CI/CD On AWS With The Serverless Framework – Part 2](https://cevo.com.au/post/full-stack-serverless-ci-cd-on-aws-with-the-serverless-framework-part-2/)
 ```
-serverless plugin install -n serverless-single-page-app-plugin
-npm install serverless-frontend-plugin --save-dev
-npm install serverless-s3-local --save-dev
-serverless offline start
+> serverless plugin install -n serverless-single-page-app-plugin
+> npm install serverless-frontend-plugin --save-dev
+> npm install serverless-s3-local --save-dev
+
+> serverless offline start
 ```
 
 ### [Code of conduct](https://javascript-conference.com/code-of-conduct/)
