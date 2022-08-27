@@ -11,3 +11,5 @@ updates:
       interval: "daily"
     ignore:
      - dependency-name: "@quasar/app"
+    # Disable all pull requests for Docker dependencies
+    # open-pull-requests-limit: 0
