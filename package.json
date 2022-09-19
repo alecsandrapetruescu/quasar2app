@@ -22,7 +22,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.18.9",
+    "@babel/eslint-parser": "^7.19.1",
     "@intlify/vue-i18n-loader": "^4.2.0",
     "@quasar/app": "^3.3.3",
     "@types/node": "^18.7.18",
