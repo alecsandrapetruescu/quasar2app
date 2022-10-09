@@ -2,6 +2,7 @@
 ## Quasar App
 [![build (16.x)](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/build.yml/badge.svg)](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/build.yml)
 [![CodeQL](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/codeql.yml/badge.svg)](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/codeql.yml)
+[![Dependency Review](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/alecsandrapetruescu/quasar2app/actions/workflows/dependency-review.yml)
 [![license](https://img.shields.io/github/license/alecsandrapetruescu/vue3app)](https://github.com/alecsandrapetruescu/vue3app/blob/main/LICENSE)
 > Initially started with Quasar on Codesandbox.io.
 
