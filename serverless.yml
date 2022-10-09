@@ -1,48 +1,62 @@
-service: single-page-app-via-cloudfront7
+service: single-page-app-via-cloudfront
 
-#frameworkVersion: ">=1.2.0 <2.0.0"
+# Framework version constraint (semver constraint): '3', '^2.33'
+frameworkVersion: '3'
 
 plugins:
   - serverless-single-page-app-plugin
 #  - serverless-localstack
-  - serverless-s3-local
-  - serverless-frontend-plugin
-  - serverless-offline # runs last so your code has been pre-processed
+#  - serverless-s3-local
+#  - serverless-frontend-plugin
+#  - serverless-offline # runs last so your code has been pre-processed
 
 custom:
-  s3Bucket: yourBucketName123
-  serverless-frontend-plugin:
-    offline:
-      command: ["npm", "run", "dev"]
+  s3Bucket: q2app
+  s3LocalPath: dist/spa
+#  serverless-frontend-plugin:
+#    distDir: "/dist"
+#    bucket:
+#      name: ${self:custom.s3Bucket}
+#    offline:
+#      command: ["npm", "run", "dev"]
 provider:
   name: aws
+  # Use a custom name for the CloudFormation stack
+  stackName: single-page-app-via-cloudfront-stack
   runtime: nodejs16.x
 
 resources:
   Resources:
     ## Specifying the S3 Bucket
     WebAppS3Bucket:
-      Type: AWS::S3::Bucket
+      Type: 'AWS::S3::Bucket'
       Properties:
         BucketName: ${self:custom.s3Bucket}
         AccessControl: PublicRead
         WebsiteConfiguration:
           IndexDocument: index.html
-          ErrorDocument: index.html
-    ## Specifying the policies to make sure all files inside the Bucket are avaialble to CloudFront
+          ErrorDocument: error.html
+      #DeletionPolicy: Retain
+
+    ## Specifying the policies to make sure all files inside the Bucket are available to CloudFront
     WebAppS3BucketPolicy:
-      Type: AWS::S3::BucketPolicy
+      Type: 'AWS::S3::BucketPolicy'
       Properties:
-        Bucket:
-          Ref: WebAppS3Bucket
+        Bucket: !Ref WebAppS3Bucket
         PolicyDocument:
+          Id: 'MyQ2AppPolicy'
+          Version: '2012-10-17'
           Statement:
-            - Sid: PublicReadGetObject
+            - Sid: PublicReadForGetBucketObjects
               Effect: Allow
-              Principal: "*"
+              Principal: '*'
               Action:
                 - s3:GetObject
-              Resource: arn:aws:s3:::${self:custom.s3Bucket}/*
+              Resource: !Join
+                - ''
+                - - 'arn:aws:s3:::'
+                  - !Ref WebAppS3Bucket
+                  - /*
     ## Specifying the CloudFront Distribution to server your Web Application
     WebAppCloudFrontDistribution:
       Type: AWS::CloudFront::Distribution
@@ -58,13 +72,13 @@ resources:
                 OriginProtocolPolicy: https-only
               ## In case you want to restrict the bucket access use S3OriginConfig and remove CustomOriginConfig
               # S3OriginConfig:
-              #   OriginAccessIdentity: origin-access-identity/cloudfront/E127EXAMPLE51Z
+              #  OriginAccessIdentity: origin-access-identity/cloudfront/E127EXAMPLE51Z
           Enabled: 'true'
           ## Uncomment the following section in case you are using a custom domain
           # Aliases:
-          # - mysite.example.com
+          #  - mysite.example.com
           DefaultRootObject: index.html
-          ## Since the Single Page App is taking care of the routing we need to make sure ever path is served with index.html
+          ## Since the Single Page App is taking care of the routing we need to make sure every path is served with index.html
           ## The only exception are files that actually exist e.h. app.js, reset.css
           CustomErrorResponses:
             - ErrorCode: 404
@@ -99,6 +113,9 @@ resources:
 
   ## In order to print out the hosted domain via `serverless info` we need to define the DomainName output for CloudFormation
   Outputs:
+    WebAppS3BucketOutput:
+      Value:
+        'Ref': WebAppS3Bucket
     WebAppCloudFrontDistributionOutput:
       Value:
         'Fn::GetAtt': [ WebAppCloudFrontDistribution, DomainName ]

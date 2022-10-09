@@ -71,8 +71,19 @@ npm run build
 # Install the serverless CLI
 > npm install -g serverless
 > npm install
-# Start in offline mode
-> serverless offline start
+# Configure serverless
+> serverless config credentials \
+  --provider aws \
+  --key key \
+  --secret secrets
+# Deploy stack
+> serverless deploy --region eu-central-1 --verbose
+# Upload static files to s3
+> serverless syncToS3 --region eu-central-1
+# Domain name from the CloudFront
+> serverless domainInfo --region eu-central-1
+# Remove stack
+> serverless remove --region eu-central-1 --verbose
 ```
 
 ### [Code of conduct](https://javascript-conference.com/code-of-conduct/)

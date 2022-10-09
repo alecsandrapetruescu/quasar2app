@@ -21,11 +21,11 @@ phases:
   post_build:
     commands:
       - echo Deploy started on `date`
-      - serverless plugin install -n serverless-single-page-app-plugin
+#      - serverless plugin install -n serverless-single-page-app-plugin
       - serverless deploy --region $AWS_REGION --verbose
-      - serverless domainInfo
-      - serverless syncToS3
-      - serverless invalidateCloudFrontCache
+      - serverless domainInfo --region $AWS_REGION
+      - serverless syncToS3 --region $AWS_REGION
+      - serverless invalidateCloudFrontCache --region $AWS_REGION
 cache:
   paths:
     - node_modules
