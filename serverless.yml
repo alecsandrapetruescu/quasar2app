@@ -35,7 +35,7 @@ resources:
         AccessControl: PublicRead
         WebsiteConfiguration:
           IndexDocument: index.html
-          ErrorDocument: error.html
+          ErrorDocument: index.html
       #DeletionPolicy: Retain
 
     ## Specifying the policies to make sure all files inside the Bucket are available to CloudFront
