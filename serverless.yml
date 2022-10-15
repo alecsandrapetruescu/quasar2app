@@ -63,7 +63,7 @@ resources:
       Properties:
         DistributionConfig:
           Origins:
-            - DomainName: ${self:custom.s3Bucket}.s3-website.eu-central-1.amazonaws.com
+            - DomainName: ${self:custom.s3Bucket}.s3-website.${param:region, 'eu-central-1'}.amazonaws.com
               ## An identifier for the origin which must be unique within the distribution
               Id: WebApp
               CustomOriginConfig:
