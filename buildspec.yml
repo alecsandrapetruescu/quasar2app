@@ -25,7 +25,7 @@ phases:
       - serverless deploy --region $AWS_REGION --verbose
       - serverless domainInfo --region $AWS_REGION
       - serverless syncToS3 --region $AWS_REGION
-      - serverless invalidateCloudFrontCache --region $AWS_REGION
+#      - serverless invalidateCloudFrontCache --region $AWS_REGION
 cache:
   paths:
     - node_modules
