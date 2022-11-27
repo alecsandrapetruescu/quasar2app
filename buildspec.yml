@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: eu-central-1
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16.x
+    commands:
+      - echo Install started on `date`
+      - npm install -g serverless
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Deploy started on `date`
+      - serverless deploy --region $AWS_REGION --verbose
+      - serverless domainInfo --region $AWS_REGION
+      - serverless syncToS3 --region $AWS_REGION
+cache:
+  paths:
+    - node_modules

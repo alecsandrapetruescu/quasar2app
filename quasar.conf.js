@@ -61,7 +61,7 @@ module.exports = configure(function (ctx) {
         node: 'node16'
       },
       env: require('dotenv').config().parsed,
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
       // publicPath: '/',

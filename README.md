@@ -12,8 +12,8 @@
 Learn Quasar Framework build with Vue3.
 
 ### Motivation
-[7 Reasons to migrate from Vuetify to Quasar Framework](https://medium.com/@charliegilmanuk/7-reasons-to-migrate-from-vuetify-to-quasar-framework-8ea47358262)
-[Composition API](https://v3.vuejs.org/api/composition-api.html)
+* [7 Reasons to migrate from Vuetify to Quasar Framework](https://medium.com/@charliegilmanuk/7-reasons-to-migrate-from-vuetify-to-quasar-framework-8ea47358262)
+* [Composition API](https://v3.vuejs.org/api/composition-api.html)
 
 ### Inspiration
 - [appsmith](https://www.appsmith.com/)
@@ -46,9 +46,6 @@ npm run lint
 ```bash
 npm run build
 ```
-### Serverless
-[Serverless single page application](https://github.com/serverless/examples/tree/v3/aws-node-single-page-app-via-cloudfront)
-[Serverless offline](https://www.serverless.com/plugins/serverless-offline)
 
 ### Quasar Repositories
 
@@ -59,6 +56,36 @@ npm run build
 - [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
+#### Serverless Framework
+* [Serverless single page application](https://github.com/serverless/examples/tree/v3/aws-node-single-page-app-via-cloudfront)
+* [serverless-single-page-app-plugin](https://github.com/jonathanconway/serverless-single-page-app-plugin)
+* [Serverless offline](https://www.serverless.com/plugins/serverless-offline)
+* [Serverless S3 local](https://www.serverless.com/plugins/serverless-frontend-plugin)
+* [Package and deploy any frontend with your serverless backend.](https://www.serverless.com/plugins/serverless-s3-local)
+* [AWS CI/CD Pipeline to Deploy a Serverless Framework Project](https://www.serverlessguru.com/blog/aws-ci-cd-pipeline-to-deploy-a-serverless-framework-project)
+* [Full Stack Serverless CI/CD On AWS With The Serverless Framework – Part 2](https://cevo.com.au/post/full-stack-serverless-ci-cd-on-aws-with-the-serverless-framework-part-2/)
+##### Requirements
+* [Setting Up Serverless Framework With AWS](https://www.serverless.com/framework/docs/getting-started)
+##### Setup
+```
+# Install the serverless CLI
+> npm install -g serverless
+> npm install
+# Configure serverless
+> serverless config credentials \
+  --provider aws \
+  --key key \
+  --secret secrets
+# Deploy stack
+> serverless deploy --region eu-central-1 --verbose
+# Upload static files to s3
+> serverless syncToS3 --region eu-central-1
+# Domain name from the CloudFront
+> serverless domainInfo --region eu-central-1
+# Remove stack
+> serverless remove --region eu-central-1 --verbose
+```
+
 ### [Code of conduct](https://javascript-conference.com/code-of-conduct/)
 
 ### License
@@ -66,3 +93,4 @@ npm run build
 Copyright (c) 2022
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
