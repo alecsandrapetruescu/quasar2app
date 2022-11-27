@@ -5,20 +5,10 @@ frameworkVersion: '3'
 
 plugins:
   - serverless-single-page-app-plugin
-#  - serverless-localstack
-#  - serverless-s3-local
-#  - serverless-frontend-plugin
-#  - serverless-offline # runs last so your code has been pre-processed
 
 custom:
   s3Bucket: q2app
   s3LocalPath: dist/spa
-#  serverless-frontend-plugin:
-#    distDir: "/dist"
-#    bucket:
-#      name: ${self:custom.s3Bucket}
-#    offline:
-#      command: ["npm", "run", "dev"]
 provider:
   name: aws
   # Use a custom name for the CloudFormation stack

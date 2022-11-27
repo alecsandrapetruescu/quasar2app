@@ -15,17 +15,14 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-#      - npm ci
       - npm run build
       - echo Build completed on `date`
   post_build:
     commands:
       - echo Deploy started on `date`
-#      - serverless plugin install -n serverless-single-page-app-plugin
       - serverless deploy --region $AWS_REGION --verbose
       - serverless domainInfo --region $AWS_REGION
       - serverless syncToS3 --region $AWS_REGION
-#      - serverless invalidateCloudFrontCache --region $AWS_REGION
 cache:
   paths:
     - node_modules
