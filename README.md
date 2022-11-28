@@ -19,12 +19,11 @@ Learn Quasar Framework build with Vue3.
 - [appsmith](https://www.appsmith.com/)
 - [Vue CRUD](https://github.com/what-crud/vue-crud)
 
-### Usage
-### Requirements
-[Node.js version 16.x](https://nodejs.org/en/about/releases/#releases)
-
-[Install Node.js version 16.x on Ubuntu 20.x](https://gist.github.com/alecsandrapetruescu/9e5d1b02f2a9644b14257c101c8dd332)
-### Install the dependencies
+### Remote usage
+#### Requirements
+* [Node.js version 16.x](https://nodejs.org/en/about/releases/#releases)
+* [Install Node.js version 16.x on Ubuntu 20.x](https://gist.github.com/alecsandrapetruescu/9e5d1b02f2a9644b14257c101c8dd332)
+#### Install the dependencies
 ```bash
 npm install --omit=optional
 ```
@@ -46,51 +45,20 @@ npm run lint
 ```bash
 npm run build
 ```
-
+### [How to deploy to AWS?](README_DEPLOYMENT.md)
 ### Quasar Repositories
 
 - [Quasar Framework](https://github.com/quasarframework/quasar)
 
-### Resources
+### Quasar Resources
 
 - [Component Building with Quasar](https://medium.com/quasar-framework/component-building-with-quasar-fc101b6730ae)
 - [Component Building with Quasar - Demo](https://jsfiddle.net/smolinari/mc2s5pk6/)
 
-#### Serverless Framework
-* [Serverless single page application](https://github.com/serverless/examples/tree/v3/aws-node-single-page-app-via-cloudfront)
-* [serverless-single-page-app-plugin](https://github.com/jonathanconway/serverless-single-page-app-plugin)
-* [Serverless offline](https://www.serverless.com/plugins/serverless-offline)
-* [Serverless S3 local](https://www.serverless.com/plugins/serverless-frontend-plugin)
-* [Package and deploy any frontend with your serverless backend.](https://www.serverless.com/plugins/serverless-s3-local)
-* [AWS CI/CD Pipeline to Deploy a Serverless Framework Project](https://www.serverlessguru.com/blog/aws-ci-cd-pipeline-to-deploy-a-serverless-framework-project)
-* [Full Stack Serverless CI/CD On AWS With The Serverless Framework – Part 2](https://cevo.com.au/post/full-stack-serverless-ci-cd-on-aws-with-the-serverless-framework-part-2/)
-##### Requirements
-* [Setting Up Serverless Framework With AWS](https://www.serverless.com/framework/docs/getting-started)
-##### Setup
-```
-# Install the serverless CLI
-> npm install -g serverless
-> npm install
-# Configure serverless
-> serverless config credentials \
-  --provider aws \
-  --key key \
-  --secret secrets
-# Deploy stack
-> serverless deploy --region eu-central-1 --verbose
-# Upload static files to s3
-> serverless syncToS3 --region eu-central-1
-# Domain name from the CloudFront
-> serverless domainInfo --region eu-central-1
-# Remove stack
-> serverless remove --region eu-central-1 --verbose
-```
-
 ### [Code of conduct](https://javascript-conference.com/code-of-conduct/)
 
 ### License
+[MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
 Copyright (c) 2022
-
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
