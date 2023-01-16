@@ -27,7 +27,7 @@
     "@quasar/app": "^3.3.3",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.42.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "dotenv": "^16.0.3",
     "eslint": "^8.28.0",
     "eslint-config-standard": "^17.0.0",
