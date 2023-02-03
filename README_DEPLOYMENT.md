@@ -44,3 +44,32 @@
 ```
 
 #### Deployment setup from GitHub to AWS.
+* [buildspec.yml](buildspec.yml) file
+* [Create and configure your pipeline - from Step 2](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-serverlessrepo-auto-publish.html)
+* For the created `Service Role` for `CodeBuild` attach following policies: `AmazonS3FullAccess`, `CloudFrontFullAccess`, `AWSCloudFormationFullAccess`
+
+#### BUG
+A Deployment setup from GitHub to AWS with the current [serverless.yml](./serverless.yml) will result in
+
+`504 ERROR`
+
+`The request could not be satisfied.`
+
+`CloudFront attempted to establish a connection with the origin, but either the attempt failed or the origin closed the connection. We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later, or contact the app or website owner.
+If you provide content to customers through CloudFront, you can find steps to troubleshoot and help prevent this error by reviewing the CloudFront documentation.`
+`
+HOTFIX:
+
+* Access https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=eu-central-1#/distributions
+* Select your newly created `Distribution`.
+* Select the `Origins` Tab.
+* Select your origin, for example Origin Name `WebApp`, afterwards select `Edit`.
+* In the `Edit origin` page, for the `Origin domain` select from the drop down `bucketName.s3.eu-central-1.amazonaws.com`
+* Afterwards a prompt will inform you
+`This S3 bucket has static web hosting enabled. If you plan to use this distribution as a website, we recommend using the S3 website endpoint rather than the bucket endpoint.`
+* Click on `Use website endpoint`
+* Afterwards `Save changes`
+* The CloudFront Distribution will be redeployed.
+
+#### Another Bug
+* [Migrating CloudFront OAI to OAC using CloudFormation](https://dev.to/aws-builders/migrating-cloudfront-oai-to-oac-using-cloudformation-3m6f)
