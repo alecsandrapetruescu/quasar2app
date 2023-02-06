@@ -10,7 +10,7 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "dependency: "
+      prefix: "chore(deps): "
     ignore:
      - dependency-name: "@quasar/app"
     # Disable all pull requests
