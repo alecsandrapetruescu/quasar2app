@@ -14,4 +14,4 @@ updates:
     ignore:
      - dependency-name: "@quasar/app"
     # Disable all pull requests
-    # open-pull-requests-limit: 0
+    open-pull-requests-limit: 10
