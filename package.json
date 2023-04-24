@@ -25,7 +25,7 @@
     "@babel/eslint-parser": "^7.21.3",
     "@intlify/vue-i18n-loader": "^4.2.0",
     "@quasar/app": "^3.3.3",
-    "@types/node": "^18.15.13",
+    "@types/node": "^18.16.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.58.0",
     "dotenv": "^16.0.3",
